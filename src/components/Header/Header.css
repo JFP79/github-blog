@@ -2,15 +2,23 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:blue;
 }
 
 .container {
-  background-color: #112344;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 80em;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+}
+
+.head {
+  display: flex;
+  width: 850px;
+  background-color: #112344;
   border-radius: 8px;
 }
 
@@ -25,12 +33,11 @@
 
 .textos h1{
   text-align: center;
-  font-size: 35px;
 }
 
 .textos p{
+  font-size: 20px;
   text-align: center;
-  font-size: 25px;
 }
 
 .links{
@@ -54,5 +61,13 @@
 }
 
 .seguidores {
-  font-size: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 50px;
+  
+}
+
+.seguidores p {
+  font-size: 15px;
 }

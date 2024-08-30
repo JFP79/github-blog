@@ -1,8 +1,19 @@
 .box-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 30px;
+}
+
+.title-issues {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
   
+
   

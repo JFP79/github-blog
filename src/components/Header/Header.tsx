@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./Header.css";
+import { IGitProfile } from '../../types/types';
 
 
 function Header() {
-  const [perfil, setPerfil] = useState([]);
+  const [perfil, setPerfil] = useState<IGitProfile>();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -29,22 +30,24 @@ function Header() {
 
   return (
     <div className="container">
+      <div className='head'>
       <div className="foto">
-        <img src={perfil.avatar_url} alt="Perfil do GitHub" />
+        <img src={perfil?.avatar_url} alt="Perfil do GitHub" />
       </div>
       <div className="textos">
-        <h1>{perfil.name}</h1>
-        <p>{perfil.bio}</p>
-        <div className="links">
-          </div>
+        <h1>{perfil?.name}</h1>
+        <p>{perfil?.bio}</p>
+        
         <div className="seguidores">
-          <p>follower: {perfil.followers}</p>
-          <p>following: {perfil.following}</p>
+          <p>followers: {perfil?.followers}</p>
+          <p>{perfil?.location}</p>
         </div>
+      </div>
       </div>
     </div>
 
   );
+
 }
 
 export default Header;

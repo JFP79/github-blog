@@ -1,18 +1,19 @@
 import "./Issues.css"
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from "../../components/Card/Card";
+import { Issue } from "../../types/types";
 
 function Issues() {
-  const [repositories, setRepositories] = useState([]);
+  const [issues, setIssues] = useState<Issue[]>([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRepositories = async () => {
       try { 
-        const response = await axios.get('https://api.github.com/users/JFP79/repos');
-        setRepositories(response.data.slice(0, 6));
+        const response = await axios.get('https://api.github.com/repos/JFP79/prova2606/issues');
+        setIssues(response.data);
       } catch (err) {
         setError('Failed to fetch repositories. ');
         console.log(err)
@@ -29,12 +30,17 @@ function Issues() {
 
   return (
     <div>
-      <h1>GitHub Repositories</h1>
+      <h1 className="title-issues">GitHub Repositories</h1>
       <div className="box-container">
-        {repositories.map((repo) => (
-          <Card key={repo.id} title={repo.name} content={repo.description || 'No description'} />
+        {issues?.map((issue) => (
+          <Card
+            key={issue.id}
+            id={issue.id}
+            title={issue.title}
+            content={issue.body}
+          />
         ))}
-      </div>
+      </div> 
     </div>
   );
 }

@@ -1,5 +1,28 @@
 .card {
-color:black;
-font-size: 24px;
-background-color:#112344;
+    display: flex;
+    flex-wrap: wrap;
+    color:black;
+    font-size: 12px;
+    background-color:#112344;
+    height: 350px;
+    width: 450px;
+    padding: 10px;
+    border-radius: 5px;
 }
+
+.title {
+    width: 100%;
+    color: white;
+    height: 50px;
+    background-color: #112344;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.body {
+    width: 100%;
+    color: white;
+    height: 300px;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 20px;
+}
+

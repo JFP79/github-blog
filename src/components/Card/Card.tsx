@@ -1,12 +1,24 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 import "./Card.css"
 
+type CardProps = {
+  id: number;
+  title: string;
+  content: string;
+};
 
-function Card({ title, content }) {
+function Card({ id, title, content }: CardProps) {
   return (
     <div className="card">
-      <h3>{title}</h3>
-      <p>{content}</p>
+      <div className="title">
+        <h1>{title}</h1>
+      </div>
+      <div className="body">
+        <p>{content?.length > 100 ? `${content?.substring(0, 200)}...` : content}</p>
+      </div>
+      <div className="footer">
+        <Link to={`/issue/${id}`} ref={null}>Read more</Link>
+      </div>
     </div>
   );
 }
