@@ -28,6 +28,8 @@ function Issues() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
+  console.log(issues.map((issue) => issue.number));
+  
   return (
     <div>
       <h1 className="title-issues">GitHub Repositories</h1>
@@ -35,7 +37,7 @@ function Issues() {
         {issues?.map((issue) => (
           <Card
             key={issue.id}
-            id={issue.id}
+            number={issue.number}
             title={issue.title}
             content={issue.body}
           />

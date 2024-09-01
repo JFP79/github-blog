@@ -1,3 +1,4 @@
+
 export interface IGitProfile {
     name: string;
     bio: string;
@@ -9,12 +10,15 @@ export interface IGitProfile {
 
 export interface Issue {
     id: number
+    number: number
     title: string
     body: string
     url: string
     created_at: string
     user: IGitProfile
 }
+
+
 
 
 
